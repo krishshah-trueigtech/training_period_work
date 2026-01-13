@@ -8,3 +8,6 @@ This repository contains all the code and projects created during my training.
     - Object Manipulation
     - DOM Manipulation
     - Fetch data
+    - Template literals
+    - Spread and rest operators
+    - import and export
