@@ -7,3 +7,4 @@ This repository contains all the code and projects created during my training.
     - Simple Calculator
     - Object Manipulation
     - DOM Manipulation
+    - Fetch data
