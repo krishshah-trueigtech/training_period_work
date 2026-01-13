@@ -3,4 +3,5 @@
 This repository contains all the code and projects created during my training.
 
 ## Structure
-- **Introduction to Javascript** Basic Programs
+- **Introduction to Javascript**
+    - Simple Calculator
