@@ -6,3 +6,4 @@ This repository contains all the code and projects created during my training.
 - **Introduction to Javascript**
     - Simple Calculator
     - Object Manipulation
+    - DOM Manipulation
