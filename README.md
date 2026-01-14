@@ -12,3 +12,4 @@ This repository contains all the code and projects created during my training.
     - Spread and rest operators
     - import and export
     - To Do List
+    - Promise
