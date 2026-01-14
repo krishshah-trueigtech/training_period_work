@@ -11,3 +11,4 @@ This repository contains all the code and projects created during my training.
     - Template literals
     - Spread and rest operators
     - import and export
+    - To Do List
