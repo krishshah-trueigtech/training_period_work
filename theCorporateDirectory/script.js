@@ -16,7 +16,7 @@ async function fetchEmployee(){
 
 function createEmployeeCard({ name, email, address }){
     const city = address?.city || "Unkown city";
-    let card = document.createElement("div");
+    const card = document.createElement("div");
     card.className = "max-w-md rounded overflow-hidden shadow-lg";
     card.innerHTML = `
     <div class="px-6 py-4">
@@ -42,7 +42,7 @@ async function init(){
 }
 
 function renderEmployees(emps){
-    let container = document.getElementById("employeeContainer");
+    const container = document.getElementById("employeeContainer");
 
     if (!container) return;
 
