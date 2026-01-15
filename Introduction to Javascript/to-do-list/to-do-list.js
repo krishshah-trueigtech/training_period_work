@@ -49,19 +49,14 @@ function deleteTask(id){
 }
 
 function toggleStatus(id){
-    tasks = tasks.map(task =>{
-        if(task.id === id){
-            if(task.status === "pending"){
-                task.status = "ongoing";
-            }
-            else if(task.status === "ongoing"){
-                task.status = "completed";
-            }
-            else {
-            task.status = "ongoing";
-            }
-        }
-        return task
+    tasks = tasks.map(task => {
+        if(task.id !== id ) return task;
+        let newStatus;
+        if(task.status === "pending") newStatus = "ongoing";
+        else if(task.status === "ongoing") newStatus = "completed";
+        else newStatus = "pending";
+
+        return {...task,status: newStatus};
     });
     displayTasks();
 }
