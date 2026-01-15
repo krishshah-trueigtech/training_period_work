@@ -13,3 +13,6 @@ This repository contains all the code and projects created during my training.
     - import and export
     - To Do List
     - Promise
+- **The Corporate Directory**
+    - script.js
+    - index.html
