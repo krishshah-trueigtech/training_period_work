@@ -15,7 +15,8 @@ async function fetchEmployee(){
 }
 
 function createEmployeeCard({ name, email, address }){
-    const city = address?.city || "Unkown city";
+    const {city = "Unkown city"}  = address;
+
     const card = document.createElement("div");
     card.className = "max-w-md rounded overflow-hidden shadow-lg";
     card.innerHTML = `
