@@ -14,6 +14,7 @@ This repository contains all the code and projects created during my training.
     - To Do List
     - Promise
     - destructuring
+    - deep copy
 - **The Corporate Directory**
     - script.js
     - index.html
