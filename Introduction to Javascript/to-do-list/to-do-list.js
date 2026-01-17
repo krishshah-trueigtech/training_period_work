@@ -1,4 +1,5 @@
-let tasks = [];
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
 function addTask(){
     let input = document.getElementById("taskInput");
     if(input.value === "") return;
@@ -10,34 +11,41 @@ function addTask(){
     };
 
     tasks.push(newTask);
-    console.log(newTask);
     input.value = "";
     displayTasks();
 }
-
 function displayTasks(){
+    localStorage.setItem("tasks",JSON.stringify(tasks));
     const list = document.getElementById('taskList');
     list.innerHTML = "";
 
     tasks.forEach(task=>{
-
         const taskDiv = document.createElement("div");
-        taskDiv.className = `task-item ${task.status}`;
+        taskDiv.className = `task-item ${task.status} border border-black rounded`;
 
         const span = document.createElement("span");
         span.innerText = task.title;
+        span.className = "p-1"
         
-        const delBtn = document.createElement("button");
-        delBtn.innerText = "Delete";
-        delBtn.onclick = () => deleteTask(task.id);
+        const editBtn = document.createElement("button");
+        editBtn.innerText = "Edit";
+        editBtn.onclick = ()=> editTask(task.id);
+        editBtn.className ="p-1 border border-black rounded"
 
         const statBtn = document.createElement("button");
         statBtn.innerText = `Status: ${task.status}`;
         statBtn.onclick = ()=> toggleStatus(task.id);
+        statBtn.className ="p-1 border border-black rounded"
+
+        const delBtn = document.createElement("button");
+        delBtn.innerText = "Delete";
+        delBtn.onclick = () => deleteTask(task.id);
+        delBtn.className = "p-1 border border-black rounded"
 
         taskDiv.appendChild(span);
-        taskDiv.appendChild(delBtn);
+        taskDiv.appendChild(editBtn);
         taskDiv.appendChild(statBtn);
+        taskDiv.appendChild(delBtn);
 
         list.appendChild(taskDiv);
     });
@@ -58,5 +66,25 @@ function toggleStatus(id){
 
         return {...task,status: newStatus};
     });
+
     displayTasks();
 }
+function editTask(id){
+    let input = prompt("Please enter task title");
+    if(input === "") return;
+    tasks = tasks.map(task =>{
+        if(task.id !== id) return task;
+        return{...task,title : input}
+    });
+    displayTasks();
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+    displayTasks();
+
+    const taskInput = document.getElementById("taskInput")
+    taskInput.addEventListener("keydown",(event)=>{
+        if (event.key === 'Enter') addTask();
+    });
+
+});

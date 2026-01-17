@@ -5,11 +5,14 @@
             TO DO List
         </title>
         <script src ="./to-do-list.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     </head>
-    <body>
+    <body class="flex flex-col items-center justify-center h-screen w-screen">
+        <div class="">
         <input id="taskInput" placeholder="Enter task...">
         <button id = "addTask" onclick="addTask()">Add Task</button>
-        <div id="taskList">
+        </div>
+        <div class ="flex flex-col" id="taskList">
         </div>
     </body>
 </html>
