@@ -1,4 +1,4 @@
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+ tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function addTask(){
     let input = document.getElementById("taskInput");
@@ -21,26 +21,26 @@ function displayTasks(){
 
     tasks.forEach(task=>{
         const taskDiv = document.createElement("div");
-        taskDiv.className = `task-item ${task.status} border border-black rounded`;
+        taskDiv.className = `task-item ${task.status} border border-black rounded p-2 m-1` ;
 
         const span = document.createElement("span");
         span.innerText = task.title;
-        span.className = "p-1"
+        span.className = "p-1 m-2 "
         
         const editBtn = document.createElement("button");
         editBtn.innerText = "Edit";
         editBtn.onclick = ()=> editTask(task.id);
-        editBtn.className ="p-1 border border-black rounded"
+        editBtn.className ="p-1 m-2 border border-black rounded"
 
         const statBtn = document.createElement("button");
-        statBtn.innerText = `Status: ${task.status}`;
+        statBtn.innerText = `${task.status}`;
         statBtn.onclick = ()=> toggleStatus(task.id);
-        statBtn.className ="p-1 border border-black rounded"
+        statBtn.className ="p-1 m-2 border border-black rounded"
 
         const delBtn = document.createElement("button");
         delBtn.innerText = "Delete";
         delBtn.onclick = () => deleteTask(task.id);
-        delBtn.className = "p-1 border border-black rounded"
+        delBtn.className = "p-1 m-2 border border-black rounded"
 
         taskDiv.appendChild(span);
         taskDiv.appendChild(editBtn);
