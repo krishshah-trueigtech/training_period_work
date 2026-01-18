@@ -15,6 +15,7 @@ This repository contains all the code and projects created during my training.
     - Promise
     - destructuring
     - deep copy
+    - stateful_counter_engine
 - **The Corporate Directory**
     - script.js
     - index.html
